@@ -1,92 +1,27 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Pantin by ediaz</title>
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+  <head profile="http://gmpg.org/xfn/11">
+    <title>Leaflet Example - asmaloney.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
-    <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+  
+  	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+	  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <script type='text/javascript' src='javascripts/jquery.min.js'></script>
+  
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Pantin</h1>
-        <p>La ruta de la familia Pantin</p>
+    <h1>La ruta de los Pantin caraqueños</h1>
+    <img src="images/pantin.png" style="height:400px" ></img>
+    <p> En este mapa muestro la ruta de nuestros antepasados Pantin hasta llegar
+      al lugar donde nació mi abuelo: Julio Pantin Alfonso. Este mapa se basa en 
+      la información de la <a href="http://www.ivgenealogia.org.ve/index_archivos/trabajos_pag2/PantinGanteaume.pdf">investigación</a> sobre la familia Pantin realizada por
+      Antonio A. Herrera-Vaillant  en Octubre, 2016
+    </p>
 
-        <p class="view"><a href="https://github.com/ediaz/Pantin">View the Project on GitHub <small>ediaz/Pantin</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/ediaz/Pantin/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/ediaz/Pantin/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/ediaz/Pantin">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-          <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          Welcome to GitHub Pages.
-        </h3>
-
-        <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here 
-          <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a 
-          designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using 
-          GitHub Desktop, simply sync your repository and you’ll see the new branch.
-        </p>
-
-   
-          <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          Creating pages manually
-        </h3>
-
-        <p>
-          If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository 
-          to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog 
-          aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them 
-          across every page. It also offers intelligent blog support and other advanced templating features.
-        </p>
-        <h3>
-          <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          Authors and Contributors
-        </h3>
-
-        <p>
-          You can @mention a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. 
-          For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.
-        </p>
-
-        <h3>
-          <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-          Support or Contact
-        </h3>
-
-        <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-
-        <div id="map" style="width: 80%; border: 1px solid #AAA;"></div>
-
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/ediaz">ediaz</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-
-
-    <script>
-      var map = L.map( 'map', {
-        center: [20.0, 5.0],
-        minZoom: 2,
-        zoom: 2
-      });
-    </script>
+    <div id="map" style="width: 800px; height: 440px; border: 1px solid #AAA;"></div>
+    <script type='text/javascript' src='maps/markers.json'></script>
+    <script type='text/javascript' src='maps/leaf-demo.js'></script>
   </body>
 </html>
